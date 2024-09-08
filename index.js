@@ -21,18 +21,7 @@ const connectDb = async () => {
   }
 };
 
-const clearDatabase = async () => {
-  try { 
-    await User.deleteMany({});
-    await Exercise.deleteMany({});
-    console.log('All collections cleared.');
-  } catch (err) {
-    console.error('Error clearing database:', err);
-  }
-}
-
 connectDb();
-clearDatabase();
 
 app.use(cors())
 app.use(express.urlencoded({ extended: true }))
